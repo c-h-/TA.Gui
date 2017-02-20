@@ -1,0 +1,26 @@
+{
+  "name": "ta.gui",
+  "version": "1.0.0",
+  "description": "Automation framework",
+  "main": "src/tagui.js",
+  "scripts": {
+    "test": "test",
+    "start": "node src/tagui.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-h-/TA.Gui.git"
+  },
+  "author": "Charlie Hulcher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/c-h-/TA.Gui/issues"
+  },
+  "homepage": "https://github.com/c-h-/TA.Gui#readme",
+  "dependencies": {
+    "fs-extra": "^2.0.0",
+    "path-exists": "^3.0.0",
+    "phantomjs": "^2.1.7",
+    "yargs": "^6.6.0"
+  }
+}

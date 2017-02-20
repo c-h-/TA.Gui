@@ -9,3 +9,6 @@
 /src/tagui_service.act
 /src/tagui_service.run
 /src/tagui_service.done
+
+# locally installed modules 
+node_modules/

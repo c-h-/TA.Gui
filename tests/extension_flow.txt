@@ -1,0 +1,5 @@
+https://github.com/tebelorg/TA.Gui
+click .pagehead.repohead.instapaper_ignore.readability-menu.experiment-repo-nav nav > span:nth-child(2)
+click add chrome extension functions
+enter comment[body] as sup
+click .TableObject-item.TableObject-item--primary
