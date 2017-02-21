@@ -8,4 +8,5 @@ module.exports = {
   SLIMERJS_EXECUTABLE: process.platform === 'win32'
     ? path.resolve(process.cwd(), './node_modules/.bin/slimerjs.cmd')
     : path.resolve(process.cwd(), './node_modules/.bin/slimerjs'),
+  SLIMERJSLAUNCHER: 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe'
 };
