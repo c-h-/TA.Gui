@@ -26,13 +26,16 @@ npm start # help
 
 ## Fork Status
 This fork is currently functional using the ported cross-platform code for basic usage.
+
+_Almost NOTHING has been tested!_ Efforts have only been made to make the project functional, not to check how well it works.
+
 Feature | Status | Notes
 --- | --- | ---
-Core Parsing Engine | Operational* | *not all intents are operational. Missing: dump, snap, wait, check, test, frame, api, js, code
+Core Parsing Engine | Operational* | *not all intents are operational. Missing: snap, check, test, frame, api, js, code
+Parsing Engine: Usage with Casper | Operational | Runs using bundled casperjs and phantomjs
+Parsing Engine: Usage with Firefox/SlimerJS | Operational | Uses [fork of slimerjs](https://github.com/c-h-/slimerjs). Attempt is made on Windows to locate Firefox and set environment variable that gets passed to slimerjs.
 Parsing Engine: repositories | Not yet ported | Next up after intents are operational
 Parsing Engine: datatables | Not yet ported | Need an example and workflow to understand enough to port
-Parsing Engine: Usage with Casper | Operational | Runs using bundled casperjs and phantomjs
-Parsing Engine: Usage with Firefox/SlimerJS | Not yet ported |
 Parsing Engine: Test automation mode | Not yet ported |
 Parsing Engine: Store text log file | Not yet ported |
 Crontab | Not yet ported | 

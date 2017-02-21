@@ -243,9 +243,50 @@ module.exports = {
     else {
       return `{
         this.echo('${_p}');
-        ${beg_tx(param1)}
-        save_text('', this.fetchText(tx('${param1}')));
-        ${end_tx(param1)}
+        ${beg_tx(params)}
+        save_text('', this.fetchText(tx('${params}')));
+        ${end_tx(params)}
+      `;
+    }
+  },
+  dump: (parsedLine) => {
+    const _p = parsedLine.trim();
+    const sep = ' to ';
+    const params = _p.slice(_p.indexOf(' ') + 1);
+    const param1 = _p.slice(_p.indexOf(' ') + ' '.length, _p.indexOf(sep));
+    const param2 = _p.slice(_p.indexOf(sep) + sep.length);
+    if (params === '') {
+      console.log(`Error: variable missing for line: ${_p}`);
+    }
+    else if (_p.indexOf(sep) > -1) {
+      return `{
+          this.echo('${_p}');
+          save_text('${abs_file(param2)}', '${param1}');
+        }
+        ${end_fi()}
+      `;
+    }
+    else {
+      return `{
+          this.echo('${_p}');
+          save_text('', '${params}');}
+        ${end_fi()}
+      `;
+    }
+  },
+  wait: (parsedLine) => {
+    const _p = parsedLine.trim();
+    const inputParams = _p.slice(_p.indexOf(' ') + 1);
+    const params = inputParams.length ? inputParams : '5';
+    if (global.parse.insideFrame !== 0) {
+      console.log(`Error: invalid after frame for line: ${_p}`);
+    }
+    else {
+      return `
+          this.echo('${_p}');
+        });
+        
+        casper.wait(${parseFloat(params) * 1000}, function () {
       `;
     }
   },
