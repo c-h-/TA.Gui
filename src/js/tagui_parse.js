@@ -169,7 +169,8 @@ function executeCasper(pathToOutput) {
     env,
   });
   child.stdout.on('data', (data) => {
-    console.log(`[casperjs] ${data.toString()}`);
+    // outputs anyways - no need to log here
+    // console.log(`[casperjs] ${data.toString()}`);
   });
 }
 

@@ -21,7 +21,7 @@ function abs_file(filename) { // helper function to return absolute filename
 function beg_tx(locator) { // helper function to return beginning string for handling locators
   return `
     casper.waitFor(function check() {
-      return check_tx('${locator}"');
+      return check_tx('${locator}');
     },
     function then() {`;
 }
@@ -87,7 +87,7 @@ module.exports = {
   },
   tap: (parsedLine) => {
     const _p = parsedLine.trim();
-    const params = _p.slice(_p.indexOf(' '));
+    const params = _p.slice(_p.indexOf(' ') + 1);
     if (_p.indexOf(' ') === -1 || params === '') {
       console.log(`Error: target missing for line: ${_p}`);
     }
@@ -102,7 +102,7 @@ module.exports = {
   },
   hover: (parsedLine) => {
     const _p = parsedLine.trim();
-    const params = _p.slice(_p.indexOf(' '));
+    const params = _p.slice(_p.indexOf(' ') + 1);
     if (_p.indexOf(' ') === -1 || params === '') {
       console.log(`Error: target missing for line: ${_p}`);
     }
@@ -151,7 +151,7 @@ module.exports = {
   },
   show: (parsedLine) => {
     const _p = parsedLine.trim();
-    const params = _p.slice(_p.indexOf(' '));
+    const params = _p.slice(_p.indexOf(' ') + 1);
     if (_p.indexOf(' ') === -1 || params === '') {
       console.log(`Error: target missing for line: ${_p}`);
     }
@@ -208,7 +208,7 @@ module.exports = {
   },
   echo: (parsedLine) => {
     const _p = parsedLine.trim();
-    const params = _p.slice(_p.indexOf(' '));
+    const params = _p.slice(_p.indexOf(' ') + 1);
     if (_p.indexOf(' ') === -1 || params === '') {
       console.log(`Error: text missing for line: ${_p}`);
     }
@@ -222,7 +222,7 @@ module.exports = {
   save: (parsedLine) => {
     const _p = parsedLine.trim();
     const sep = ' to ';
-    const params = _p.slice(_p.indexOf(' '));
+    const params = _p.slice(_p.indexOf(' ') + 1);
     const param1 = _p.slice(_p.indexOf(' ') + ' '.length, _p.indexOf(sep));
     const param2 = _p.slice(_p.indexOf(sep) + sep.length);
     if (params === '') {
