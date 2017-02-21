@@ -1,3 +1,7 @@
+// INTENTS SCRIPT FOR RUNNING TA.GUI FRAMEWORK
+// Original by Ken Soh (http://tebel.org)
+// Ported from PHP by Charlie Hulcher (https://charlie.engineer)
+
 const path = require('path');
 
 // from https://stackoverflow.com/questions/1303872/trying-to-validate-url-using-javascript

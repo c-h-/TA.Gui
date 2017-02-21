@@ -5,6 +5,42 @@ TA.Gui is a tool for non-developers and business users to automate web apps
 
 Above video shows a sample automation flow to automate mass account registrations - recording sequence of steps, editing to wait for a few seconds at the end, playing the automation flow (skip submission step in order not to spam)
 
+# FORK DETAILS
+This fork ([https://github.com/c-h-/TA.Gui](https://github.com/c-h-/TA.Gui)) aims to add cross-platform support to TA.Gui by porting it entirely to Node.
+
+Why Node? Node can be easily run in any environment, as well as from a flash drive (useful for when computers are locked from new installs). Also, critical dependencies of this project (casperjs, phantomjs, and slimerjs) are available through npm. This lets us get all required dependencies for the project and ensure they're installed correctly with one command: `npm install`. Lastly, Node was chosen because it's much easier to have feature parity and maintain a single cross-platform codebase.
+
+This fork is ported using ES2015 Node Javascript. It's verified to work on Node >= v6.8.0. Earlier versions of Node can be supported by running the scripts with `babel-node` instead of `node`.
+
+## Install Instructions
+To use this fork, follow these install instructions. No additional steps are required.
+
+```sh
+# Get the project
+git clone https://github.com/c-h-/TA.Gui tagui
+cd tagui
+npm install # Get all dependencies
+npm start -- <flow_filename> [options] # Equivalent to the original command line: ./tagui flow_filename option(s)
+npm start # help
+```
+
+## Fork Status
+This fork is currently functional using the ported cross-platform code for basic usage.
+Feature | Status | Notes
+--- | --- | ---
+Core Parsing Engine | Operational* | *not all intents are operational. Missing: dump, snap, wait, check, test, frame, api, js, code
+Parsing Engine: repositories | Not yet ported | Next up after intents are operational
+Parsing Engine: datatables | Not yet ported | Need an example and workflow to understand enough to port
+Parsing Engine: Usage with Casper | Operational | Runs using bundled casperjs and phantomjs
+Parsing Engine: Usage with Firefox/SlimerJS | Not yet ported |
+Parsing Engine: Test automation mode | Not yet ported |
+Parsing Engine: Store text log file | Not yet ported |
+Crontab | Not yet ported | 
+Service | Not yet ported | 
+Runner | Not yet ported | 
+Report | Not yet ported | 
+Chrome Extension | No change necessary | Chrome extensions need no changes to work cross-platform.
+
 # Why This
 Automate repetitive parts of your work - use cases include data acquisition, process and test automations of web apps. TA.Gui is open-source software released under the MIT license, that means you can freely use, modify or share it.
 

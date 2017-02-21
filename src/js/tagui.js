@@ -1,5 +1,6 @@
 #!/bin/node
 // SCRIPT FOR RUNNING TA.GUI FRAMEWORK
+// Original by Ken Soh (http://tebel.org)
 // Ported from Bash by Charlie Hulcher (https://charlie.engineer)
 
 const path = require('path');
@@ -18,9 +19,9 @@ const argv = require('yargs')
   .demand(1)
   .argv;
 
-const parse = require('./js/tagui_parse');
+const parse = require('./tagui_parse');
 
-const options = {
+global.options = {
   filename: null,
   firefox: false,
   report: false,

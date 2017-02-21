@@ -1,4 +1,5 @@
 // PARSER SCRIPT FOR RUNNING TA.GUI FRAMEWORK
+// Original by Ken Soh (http://tebel.org)
 // Ported from PHP by Charlie Hulcher (https://charlie.engineer)
 
 const fs = require('fs');
@@ -163,15 +164,21 @@ function executeCasper(pathToOutput) {
   console.log('executing casper');
   const suffix = process.platform === 'win32' ? '.exe' : '';
   const pathToCasper = path.resolve(process.cwd(), `./node_modules/casperjs/bin/casperjs${suffix}`);
-  console.log('path', pathToCasper);
-  const child = shell.exec(`${pathToCasper} ${pathToOutput} --verbose`, {
+  let args = '';
+  if (global.options.firefox) {
+    args += ' --engine=slimerjs';
+  }
+  if (global.options.debug) {
+    args += ' --verbose';
+  }
+  const child = shell.exec(`${pathToCasper} ${pathToOutput}${args}`, {
     async: true,
     env,
   });
-  child.stdout.on('data', (data) => {
-    // outputs anyways - no need to log here
-    // console.log(`[casperjs] ${data.toString()}`);
-  });
+  // outputs anyways - no need to log here
+  // child.stdout.on('data', (data) => {
+  //   console.log(`[casperjs] ${data.toString()}`);
+  // });
 }
 
 /**

@@ -1,11 +1,11 @@
 {
   "name": "ta.gui",
   "version": "1.0.0",
-  "description": "Automation framework",
-  "main": "src/tagui.js",
+  "description": "Tool for non-developers and business users to automate web apps http://tebel.org",
+  "main": "src/js/tagui.js",
   "scripts": {
     "test": "test",
-    "start": "node src/tagui.js",
+    "start": "node src/js/tagui.js",
     "check": "env-cmd ./.env.js ./node_modules/casperjs/bin/casperjs selftest"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "env-cmd": "^4.0.0",
     "phantomjs-prebuilt": "^2.1.14",
     "shelljs": "^0.7.6",
+    "slimerjs": "^0.10.2",
     "yargs": "^6.6.0"
   }
 }
