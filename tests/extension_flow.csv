@@ -1,0 +1,4 @@
+OBJECT,DEFINITION
+email,user-email-textbox
+create account,btn btn--green btn-xl signup-btn
+type email,type `email` as user@gmail.com
