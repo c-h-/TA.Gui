@@ -1,0 +1,7 @@
+
+START - automation started - Mon Feb 20 2017 22:27:43 GMT-0500 (EST)
+https://github.com/tebelorg/TA.Gui - GitHub - tebelorg/TA.Gui: Tool for non-developers and business users to automate web apps
+
+click .pagehead.repohead.instapaper_ignore.readability-menu.experiment-repo-nav nav > span:nth-child(2)
+click add chrome extension functions
+ERROR - cannot find add chrome extension functions
